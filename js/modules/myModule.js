@@ -49,6 +49,10 @@ define(function () {
             });
 		},
 
+        updateQuestion: function(){
+            $(this.selectors.listAnswers).find("li").remove();
+        },
+
         initialize: function() {
             _this = this;
 
@@ -61,7 +65,7 @@ define(function () {
                 if (_this.count < perguntas.length - 1) {
                     _this.count++;
                     _this.createQuestion();
-                    $(_this.selectors.listAnswers).find("li").remove();
+                    _this.updateQuestion();
                     _this.createRadios();
                 } else {
                     alert("Voce acertou: " + _this.rightAnswers );
